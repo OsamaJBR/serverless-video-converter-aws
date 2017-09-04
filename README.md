@@ -1,11 +1,14 @@
 # Serverless Video Converting using AWS ElasticTranscoder & LAmbda
+"Amazon Elastic Transcoder lets you convert media files that you have stored in Amazon Simple Storage Service (Amazon S3) into media files in the formats required by consumer playback devices. For example, you can convert large, high-quality digital media files into formats that users can play back on mobile devices, tablets, web browsers, and connected televisions." ~ [AWS Developer Guide](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/introduction.html)
 
-# How It Works
+This repo is a simple implementation for a serverless video converter that helps in serving videos for different clients. You can convert any video to any format by adding this format to *config.json* as new presetId (all presets can be found [here](http://docs.aws.amazon.com/elastictranscoder/latest/developerguide/system-presets.html)).
+
+## How It Works
 <p align="center">
  <img src="elastictranscoder.png"/>
 </p>
 
-# How To Deploy
+## How To Deploy
 ```
 # Change these variables
 INPUT_BUCKET=transcoder-input-bucket
