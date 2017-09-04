@@ -1,0 +1,33 @@
+{
+    "production": {
+        "lambda_description": "Serverless Video Converter",
+        "lambda_handler": "main.lambda_handler",
+        "events": [
+            {
+                "function": "main.lambda_handler",
+                "event_source": {
+                    "arn": "arn:aws:s3:::input_s3_bucket",
+                    "events": [
+                        "s3:ObjectCreated:*"
+                    ]
+                }
+            },
+            {
+                "function": "main.lambda_handler",
+                "event_source": {
+                    "arn": "arn:aws:sns:eu-west-1:xxxxx:sns_topic_id",
+                    "events": [
+                        "sns:Publish"
+                    ]
+                }
+            }
+        ],
+        "environment_variables": {
+            "env": "production"
+        },
+        "keep_warm": false,
+        "apigateway_enabled": false,
+        "memory_size": 128,
+        "debug": false
+    }
+}

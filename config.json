@@ -1,0 +1,20 @@
+{
+    "pipeline_name":{
+        "development": ["transcoder-development-01"],
+        "staging": ["transcoder-staging-01"],
+        "production": ["transcoder-production-01"]
+    },
+    "region_name": "eu-west-1",
+    "out_format": [
+        {
+            "desc": "System preset generic 720p",
+            "ext": ".720p.mp4",
+            "PresetId": "1351620000001-000010"
+        },
+        {
+            "desc": "System preset generic 480p",
+            "ext": ".480p.mp4",
+            "PresetId": "1351620000001-000020"
+        }
+    ]
+}
