@@ -36,7 +36,9 @@ def start_transcoding(in_fname,out_fname):
                     },
                     Outputs=[{
                         'Key': out_fname + out['ext'],
-                        'PresetId': out['PresetId']
+                        'PresetId': out['PresetId'],
+                        'ThumbnailPattern' : "%s/thumbnails/%s.{count}" %(os.path.dirname(out_fname),os.path.basename(out_fname)+out['ext']),
+                        'Rotate' : 'auto'
                     }]
                 )
         except Exception as e:
